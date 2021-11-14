@@ -1,18 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace SnakeAndLadder
 {
-    class Program
+    public class SnakeAndLadder
     {
-        static void Main(string[] args)
+        public int playerPosition = 0;
+        Random random = new Random();
+        public int DieRolling()
         {
-            Console.WriteLine("Welcome to the snake and ladder game");
-            Console.WriteLine();
-            Console.WriteLine("Player mode:single: Starting position at 0");
-            Console.WriteLine("*Start Game*");
-            int position = 0;
-            int dice;
-            Console.ReadLine();
+            int roll = random.Next(1, 7);
+            return roll;
         }
     }
 }
