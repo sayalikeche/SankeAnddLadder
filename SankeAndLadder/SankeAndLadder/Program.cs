@@ -23,7 +23,7 @@ namespace SnakeAndLadder
             Random die = new Random();
             Random options = new Random();
 
-            while (position <= FINAL)
+            while (position < FINAL)
             {
                 int dice = die.Next(1, 7);
                 Console.WriteLine("The number on this die roll is: " + dice);
@@ -37,7 +37,16 @@ namespace SnakeAndLadder
                 else if (opt == LADDER)
                 {
                     position = position + dice;
-                    Console.WriteLine("Ladder! new postion-- " + position);
+                    if (position > 100)
+                    {
+                        Console.WriteLine("Try Again, throw exceeded 100!");
+                        position = position - dice;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ladder! new postion-- " + position);
+                    }
+
                 }
                 else
                 {
@@ -49,8 +58,12 @@ namespace SnakeAndLadder
                 {
                     position = 0;
                 }
-
             }
+
         }
+
+
+
+
     }
 }
